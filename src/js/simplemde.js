@@ -736,9 +736,9 @@ function toggleSideBySide(editor) {
 
 	if(useSideBySideListener) {
 		preview.innerHTML = editor.options.previewRender(editor.value(), preview);
-		cm.on("update", cm.sideBySideRenderingFunction);
+		cm.on("change", cm.sideBySideRenderingFunction);
 	} else {
-		cm.off("update", cm.sideBySideRenderingFunction);
+		cm.off("change", cm.sideBySideRenderingFunction);
 	}
 
 	// Refresh to fix selection being off (#309)
